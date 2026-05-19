@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard IoT Inteligente</title>
+
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Leaflet (Mapa) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="background-glow"></div>
+
+  <main class="container">
+    <!-- CABECERA -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>🚀 Dashboard IoT Inteligente</h1>
+          <p class="subtitle">
+            ESP32 + GPS NEO-6M + BME680 + TagoIO
+          </p>
+
+          <div class="hero-info">
+            <div id="status" class="status">
+              Conectando con TagoIO...
+            </div>
+
+            <div id="last-update" class="last-update">
+              Esperando datos...
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-icon">
+          <div class="pulse-ring"></div>
+          <div class="chip">📡</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- TARJETAS DE DATOS -->
+    <section class="grid">
+      <div class="card">
+        <span>🌍 Latitud</span>
+        <strong id="latitud">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🌎 Longitud</span>
+        <strong id="longitud">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🛰️ Satélites</span>
+        <strong id="satelites">--</strong>
+      </div>
+
+      <div class="card">
+        <span>📶 HDOP</span>
+        <strong id="hdop">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🏔️ Altitud GPS</span>
+        <strong id="altitud_gps">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🚗 Velocidad</span>
+        <strong id="velocidad">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🌡️ Temperatura</span>
+        <strong id="temperatura">--</strong>
+      </div>
+
+      <div class="card">
+        <span>💧 Humedad</span>
+        <strong id="humedad">--</strong>
+      </div>
+
+      <div class="card">
+        <span>📈 Presión</span>
+        <strong id="presion">--</strong>
+      </div>
+
+      <div class="card">
+        <span>🧪 Gas</span>
+        <strong id="gas_resist">--</strong>
+      </div>
+
+      <div class="card">
+        <span>⛰️ Altitud BME</span>
+        <strong id="altitud_bme">--</strong>
+      </div>
+
+      <div class="card wide">
+        <span>🕒 Hora Ecuador</span>
+        <strong id="hora_ecuador">--</strong>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="map-section">
+      <div class="section-header">
+        <h2>🗺️ Ubicación en Tiempo Real</h2>
+      </div>
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Script principal -->
+  <script src="script.js"></script>
+</body>
+</html>
